@@ -17,6 +17,12 @@ playerNameArray.append("jesusNavasIF")
 playerNameArray.append("nicoloBarellaIF")
 playerNameArray.append("felipeAndersonIF")
 playerNameArray.append("manuelAkanji")
+playerNameArray.append("lukasKlostermann")
+playerNameArray.append("jeremiahStJuste")
+playerNameArray.append("emreCan")
+playerNameArray.append("erlingHaaland")
+playerNameArray.append("kalidouKoulibaly")
+playerNameArray.append("milanSkriniar")
 
 # Adding all players URLs to an array
 playerUrlArray = []
@@ -31,6 +37,12 @@ playerUrlArray.append("https://www.futbin.com/22/playerPrices?player=50478184&ri
 playerUrlArray.append("https://www.futbin.com/22/playerPrices?player=50555880&rids=224232")
 playerUrlArray.append("https://www.futbin.com/22/playerPrices?player=50533643&rids=201995")
 playerUrlArray.append("https://www.futbin.com/22/playerPrices?player=229237&rids=")
+playerUrlArray.append("https://www.futbin.com/22/playerPrices?player=222331&rids=")
+playerUrlArray.append("https://www.futbin.com/22/playerPrices?player=226853&rids=")
+playerUrlArray.append("https://www.futbin.com/22/playerPrices?player=208333&rids=")
+playerUrlArray.append("https://www.futbin.com/22/playerPrices?player=239085&rids=")
+playerUrlArray.append("https://www.futbin.com/22/playerPrices?player=201024&rids=")
+playerUrlArray.append("https://www.futbin.com/22/playerPrices?player=232363&rids=")
 
 # Arrays to store the player prices
 georginioWijnaldumPrices    = []
@@ -44,6 +56,12 @@ jesusNavasIFPrices          = []
 nicoloBarellaIFPrices       = []
 felipeAndersonIFPrices      = []
 manuelAkanjiPrices          = []
+lukasKlostermannPrices      = []
+jeremiahStJustePrices       = []
+emreCanPrices               = []
+erlingHaalandPrices         = []
+kalidouKoulibalyPrices      = []
+milanSkriniarPrices         = []
 
 # Adding all players price arrays to an array to pass to main function
 playerPriceArray = []
@@ -58,6 +76,12 @@ playerPriceArray.append(jesusNavasIFPrices)
 playerPriceArray.append(nicoloBarellaIFPrices)
 playerPriceArray.append(felipeAndersonIFPrices)
 playerPriceArray.append(manuelAkanjiPrices)
+playerPriceArray.append(lukasKlostermannPrices)
+playerPriceArray.append(jeremiahStJustePrices)
+playerPriceArray.append(emreCanPrices)
+playerPriceArray.append(erlingHaalandPrices)
+playerPriceArray.append(kalidouKoulibalyPrices)
+playerPriceArray.append(milanSkriniarPrices)
 
 # Function that takes in the player URL page and returns the player's cheapest price
 # Input:    String of player price URL page
@@ -87,10 +111,8 @@ def main():
         for i in range(len(playerUrlArray)):
             value = getPlayerPrice(playerUrlArray[i]).replace(" ", "")+"  "+ datetime.now().strftime("%H:%M:%S")
             arrayFiller(value, playerPriceArray[i])
+            textFileCreator(playerPriceArray[i], playerNameArray[i])
         time.sleep(5)
-
-    for i in range(len(playerNameArray)):
-        textFileCreator(playerPriceArray[i], playerNameArray[i])
 
     return
 
